@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.calculator {
+  display: grid;
+  color: black;
+  max-width: 100vh;
+  height: auto;
+  text-align: center;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". output output output output ." ". output output output output ." ". ac neg percent divide ." ". seven eight nine time ." ". four five six minus ." ". one two three plus ." ". nil nil dec equals .";
+}
+.calculator__output {
+  grid-area: output;
+  color: white;
+}
+.calculator__light-buttons {
+  border: solid black 1px;
+  border-color: black;
+  width: 30px;
+  display: block;
+  background-color: lightgray;
+}
+.calculator__grey-buttons {
+  border: solid black 1px;
+  border-color: black;
+  width: 30px;
+  display: block;
+  background-color: grey;
+}
+.calculator__orange-buttons {
+  border: solid black 1px;
+  border-color: black;
+  width: 30px;
+  display: block;
+  background-color: orange;
+}
+.calculator__zero-button {
+  border: solid black 1px;
+  border-color: black;
+  width: 95px;
+  display: block;
+  background-color: grey;
+  text-align: left;
+  padding-left: 11px;
+}
+
+#AC {
+  grid-area: ac;
+}
+
+#neg {
+  grid-area: neg;
+}
+
+#percent {
+  grid-area: percent;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#time {
+  grid-area: time;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#dec {
+  grid-area: dec;
+}
+
+#equals {
+  grid-area: equals;
+}
+
+#zero {
+  grid-area: nil;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
