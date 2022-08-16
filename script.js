@@ -1,1 +1,3 @@
-const operators = ["+","-","*","/"]
+const operators = ["+","-","*","/"];
+
+const numberButtons = document.querySelectorAll([])
