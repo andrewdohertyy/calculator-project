@@ -67,22 +67,18 @@
 
 .calculator__light-buttons:hover {
   opacity: 0.6;
-  transition: 0.5s ease-in-out;
 }
 
 .calculator__orange-buttons:hover {
   opacity: 0.6;
-  transition: 0.5s ease-in-out;
 }
 
 .calculator__grey-buttons:hover {
   opacity: 0.6;
-  transition: 0.5s ease-in-out;
 }
 
 .calculator__zero-button:hover {
   opacity: 0.6;
-  transition: 0.5s ease-in-out;
 }
 
 #AC {

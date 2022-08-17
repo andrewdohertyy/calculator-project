@@ -28,7 +28,7 @@
         color: black;
         background-color: white;
         display: flex;
-        flex-direction: column;s
+        flex-direction: column;
         word-wrap: break-word;
         word-break: break-all;
         padding: 20px;
@@ -73,24 +73,20 @@
     }
 }
 
+
+
 .calculator__light-buttons:hover {
     opacity: 0.6;
-    transition: 0.5s ease-in-out;
 }
 .calculator__orange-buttons:hover {
     opacity: 0.6;
-    transition: 0.5s ease-in-out;
 }
 .calculator__grey-buttons:hover {
     opacity: 0.6;
-    transition: 0.5s ease-in-out;
 }
 .calculator__zero-button:hover {
     opacity: 0.6;
-    transition: 0.5s ease-in-out;
 }
-
-
 
 
 
