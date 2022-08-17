@@ -14,7 +14,7 @@
     grid-template-columns:0.5fr 1fr 1fr 1fr 1fr 0.5fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-    ". output output output output ."
+    ". total total total total ."
     ". output output output output ."
     ". ac neg percent divide ."
     ". seven eight nine time ." 
@@ -90,7 +90,10 @@
 
 
 
-
+#total-display {
+    grid-area: total;
+    color: yellow
+}
 #AC {
 grid-area: ac;
 }
