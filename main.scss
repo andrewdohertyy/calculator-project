@@ -16,7 +16,7 @@
     grid-template-areas:
     ". total total total total ."
     ". output output output output ."
-    ". ac neg percent divide ."
+    ". ac back percent divide ."
     ". seven eight nine time ." 
     ". four five six minus ."
     ". one two three plus ."
@@ -92,13 +92,14 @@
 
 #total-display {
     grid-area: total;
-    color: yellow
+    color: yellow;
+    background-color: white;
 }
 #AC {
 grid-area: ac;
 }
-#neg {
-    grid-area: neg;
+#back {
+    grid-area: back;
 }
 #percent {
     grid-area: percent;
