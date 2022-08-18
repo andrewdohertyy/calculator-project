@@ -5,35 +5,27 @@ var display = document.getElementById('display'); //element for temporarily disp
 
 var totalDisplay = document.getElementById('total-display'); //pulls all buttons and stores them in an array
 
-var buttons = Array.from(document.getElementsByClassName('button')); //gets plus element for variable use
+var buttons = Array.from(document.getElementsByClassName('button')); //variables for function buttons
 
-var plusButton = document.getElementById('plus'); //gets equals element for variable use
-
-var equalsButton = document.getElementById('equals'); //gets clear element for variable use
-
-var clearButton = document.getElementById('AC'); //gets minus element for variable use
-
-var minusButton = document.getElementById('minus'); //gets times element for variable use
-
-var timesButton = document.getElementById('time'); //gets divide element for variable use
-
-var divideButton = document.getElementById('divide'); //gets element for backspace response
-
-var backspaceButton = document.getElementById('back'); //gets element for percentage response
-
-var percentButton = document.getElementById('percent'); //start at 0
-
-var number = 0; //waits for a symbol to be assigned 
-
-var symbol = ""; //functions for handling events
-//DOM handling for click events, whenevr a button is clicked
+var plusButton = document.getElementById('plus');
+var equalsButton = document.getElementById('equals');
+var clearButton = document.getElementById('AC');
+var minusButton = document.getElementById('minus');
+var timesButton = document.getElementById('time');
+var divideButton = document.getElementById('divide');
+var backspaceButton = document.getElementById('back');
+var percentButton = document.getElementById('percent');
+var number = 0;
+var symbol = ""; //DOM handling for click events, whenevr a button is clicked
+//gives every num a click event
 
 buttons.forEach(function (button) {
   button.addEventListener('click', function (e) {
     display.innerText += e.target.innerText;
     console.log(number);
   });
-});
+}); //when plus is clicked clears text and sets num to display number
+
 plusButton.addEventListener('click', function (e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
@@ -92,6 +84,20 @@ percentButton.addEventListener('click', function (e) {
     display.innerText = number;
   }
 });
+clearButton.addEventListener('click', function (e) {
+  if (totalDisplay.innerText !== "") {
+    symbol = e.target.innerText;
+    display.innerText = "";
+  }
+
+  number = Number(display.innerText);
+  symbol = e.target.innerText;
+
+  if (symbol === "C") {
+    number = 0;
+    display.innerText = "";
+  }
+});
 equalsButton.addEventListener('click', function (e) {
   if (symbol === "+") {
     number += Number(display.innerText);
@@ -106,8 +112,5 @@ equalsButton.addEventListener('click', function (e) {
   } else if (symbol === "/") {
     number /= Number(display.innerText);
     display.innerText = number;
-  } else if (symbol === "C") {
-    number === 0;
-    display.innerText = "";
   }
 });
