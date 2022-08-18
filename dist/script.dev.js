@@ -13,7 +13,7 @@ var clearButton = document.getElementById('AC');
 var minusButton = document.getElementById('minus');
 var timesButton = document.getElementById('time');
 var divideButton = document.getElementById('divide');
-var backspaceButton = document.getElementById('back');
+var negativeButton = document.getElementById('neg');
 var percentButton = document.getElementById('percent');
 var number = 0;
 var symbol = ""; //DOM handling for click events, whenevr a button is clicked
@@ -96,6 +96,20 @@ clearButton.addEventListener('click', function (e) {
   if (symbol === "C") {
     number = 0;
     display.innerText = "";
+  }
+});
+negativeButton.addEventListener('click', function (e) {
+  if (totalDisplay.innerText !== "") {
+    symbol = e.target.innerText;
+    display.innerText = "";
+  }
+
+  number = Number(display.innerText);
+  symbol = e.target.innerText;
+
+  if (symbol === "±") {
+    var negativeNum = -Math.abs(display.innerText);
+    display.innerText = negativeNum;
   }
 });
 equalsButton.addEventListener('click', function (e) {

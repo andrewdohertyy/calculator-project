@@ -14,7 +14,7 @@ let clearButton = document.getElementById('AC');
 let minusButton = document.getElementById('minus');
 let timesButton = document.getElementById('time');
 let divideButton = document.getElementById('divide');
-let backspaceButton = document.getElementById('back');
+let negativeButton = document.getElementById('neg');
 let percentButton = document.getElementById('percent');
 let number = 0
 let symbol = ""
@@ -105,7 +105,18 @@ clearButton.addEventListener('click', (e) => {
         display.innerText = ""
 }});
 
-
+negativeButton.addEventListener('click', (e) => {
+    if (totalDisplay.innerText !== "") {
+        symbol = e.target.innerText
+        display.innerText = "";
+    }
+    number = Number(display.innerText);
+    symbol = e.target.innerText
+    
+    if (symbol === "±") {
+        let negativeNum = -Math.abs(display.innerText)
+        display.innerText = negativeNum;
+}});
 
 equalsButton.addEventListener('click', (e) => {
     if (symbol === "+") {
