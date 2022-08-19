@@ -28,7 +28,7 @@ var sum = function sum(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
-  } //after the zero value in the string takes an input (number)
+  } //after the zero value  from the symbolin the string takes an input (number)
 
 
   number = Number(display.innerText);
