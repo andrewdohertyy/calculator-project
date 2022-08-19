@@ -19,14 +19,13 @@ let percentButton = document.getElementById('percent');
 let number = ""
 let symbol = ""
 
-
 //gives every num a click event
 buttons.forEach((button) =>  {
     button.addEventListener('click', (e) => {
-            display.innerText += e.target.innerText;
-        })});
+    display.innerText += e.target.innerText;
+    })});
 
-
+    
 //function and click events to return the add/take/divide/times of a sum
 const sum = (e) => {
     if (totalDisplay.innerText !== "") {
