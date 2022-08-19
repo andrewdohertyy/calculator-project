@@ -98,7 +98,8 @@ clearButton.addEventListener('click', function (e) {
     display.innerText = "";
   }
 });
-negativeButton.addEventListener('click', function (e) {
+
+var negative = function negative(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
@@ -111,7 +112,11 @@ negativeButton.addEventListener('click', function (e) {
     var negativeNum = -Math.abs(display.innerText);
     display.innerText = negativeNum;
   }
-});
+}; //function and click event to make numbers negative
+
+
+negativeButton.addEventListener('click', negative); //equals button will perform all of the tasks that the symbols require using if statements.
+
 equalsButton.addEventListener('click', function (e) {
   if (symbol === "+") {
     number += Number(display.innerText);

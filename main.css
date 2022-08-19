@@ -1,16 +1,8 @@
-.calculator__light-buttons:hover {
+.button:hover {
   opacity: 0.6;
 }
 
-.calculator__orange-buttons:hover {
-  opacity: 0.6;
-}
-
-.calculator__grey-buttons:hover {
-  opacity: 0.6;
-}
-
-.calculator__zero-button:hover {
+.function-button:hover {
   opacity: 0.6;
 }
 
