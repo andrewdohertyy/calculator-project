@@ -2,67 +2,73 @@
   margin: 0;
   padding: 0;
   background-color: black;
+  box-sizing: border-box;
 }
 
 .calculator {
   display: grid;
   color: black;
   max-width: 100vh;
+  gap: 2px;
   height: auto;
   text-align: center;
   align-content: center;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: ". total total total total ." ". output output output output ." ". ac neg percent divide ." ". seven eight nine time ." ". four five six minus ." ". one two three plus ." ". nil nil dec equals .";
 }
 .calculator__output {
   grid-area: output;
-  text-align: right;
-  color: black;
-  background-color: white;
+  font-size: x-large;
+  text-align: end;
+  justify-content: flex-end;
+  color: white;
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
   word-break: break-all;
-  padding: 20px;
+  padding: 5px;
 }
 .calculator__light-buttons {
   border: solid black 1px;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   display: block;
   background-color: lightgray;
+  padding-top: 4px;
 }
 .calculator__grey-buttons {
   border: solid black 1px;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   color: white;
-  width: 30px;
   display: block;
   background-color: grey;
+  padding-top: 4px;
 }
 .calculator__orange-buttons {
   border: solid black 1px;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   color: white;
-  width: 30px;
   display: block;
   background-color: orange;
+  padding-top: 4px;
 }
 .calculator__zero-button {
   border: solid black 1px;
   border-radius: 40px;
-  height: 30px;
+  height: 40px;
   width: 85px;
   display: block;
   background-color: grey;
   text-align: left;
   padding-left: 11px;
+  padding-top: 4px;
 }
 
 .calculator__light-buttons:hover {
@@ -83,8 +89,7 @@
 
 #total-display {
   grid-area: total;
-  color: yellow;
-  background-color: white;
+  color: white;
 }
 
 #AC {
@@ -161,4 +166,205 @@
 
 #nine {
   grid-area: nine;
+}
+
+@media screen and (min-width: 425px) {
+  .calculator {
+    display: grid;
+    font-size: large;
+    gap: 5px;
+    max-width: 100vh;
+    height: auto;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". total total total total ." ". output output output output ." ". ac neg percent divide ." ". seven eight nine time ." ". four five six minus ." ". one two three plus ." ". nil nil dec equals .";
+  }
+  .calculator__output {
+    grid-area: output;
+    text-align: end;
+    font-size: xx-large;
+    justify-content: flex-end;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+  }
+  .calculator__light-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: block;
+    background-color: lightgray;
+    padding-top: 14px;
+  }
+  .calculator__grey-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: white;
+    display: block;
+    background-color: grey;
+    padding-top: 14px;
+  }
+  .calculator__orange-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: white;
+    display: block;
+    background-color: orange;
+    padding-top: 14px;
+  }
+  .calculator__zero-button {
+    border: solid black 1px;
+    border-radius: 40px;
+    height: 50px;
+    width: 105px;
+    display: block;
+    background-color: grey;
+    text-align: left;
+    padding-left: 21px;
+    padding-top: 14px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .calculator {
+    display: grid;
+    max-width: 100vh;
+    font-size: xx-large;
+    height: auto;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". total total total total ." ". output output output output ." ". ac neg percent divide ." ". seven eight nine time ." ". four five six minus ." ". one two three plus ." ". nil nil dec equals .";
+  }
+  .calculator__output {
+    grid-area: output;
+    text-align: end;
+    font-size: xxx-large;
+    justify-content: flex-end;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 20px;
+  }
+  .calculator__light-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    display: block;
+    background-color: lightgray;
+    padding-top: 20px;
+  }
+  .calculator__grey-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    color: white;
+    display: block;
+    background-color: grey;
+    padding-top: 20px;
+  }
+  .calculator__orange-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    color: white;
+    display: block;
+    background-color: orange;
+    padding-top: 20px;
+  }
+  .calculator__zero-button {
+    border: solid black 1px;
+    border-radius: 40px;
+    height: 80px;
+    width: 170px;
+    display: block;
+    background-color: grey;
+    text-align: left;
+    padding-left: 35px;
+    padding-top: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .calculator {
+    display: grid;
+    max-width: 100%;
+    font-size: xxx-large;
+    gap: 10px;
+    height: auto;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr 4fr;
+    grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". total total total total ." ". output output output output ." ". ac neg percent divide ." ". seven eight nine time ." ". four five six minus ." ". one two three plus ." ". nil nil dec equals .";
+  }
+  .calculator__output {
+    grid-area: output;
+    text-align: end;
+    font-size: xxxxx-large;
+    justify-content: flex-end;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 20px;
+  }
+  .calculator__light-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: block;
+    background-color: lightgray;
+    padding-top: 20px;
+  }
+  .calculator__grey-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    color: white;
+    display: block;
+    background-color: grey;
+    padding-top: 20px;
+  }
+  .calculator__orange-buttons {
+    border: solid black 1px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    color: white;
+    display: block;
+    background-color: orange;
+    padding-top: 20px;
+  }
+  .calculator__zero-button {
+    border: solid black 1px;
+    border-radius: 40px;
+    height: 100px;
+    width: 215px;
+    display: block;
+    background-color: grey;
+    text-align: left;
+    padding-left: 35px;
+    padding-top: 20px;
+  }
 }
