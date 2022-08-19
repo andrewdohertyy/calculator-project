@@ -25,7 +25,7 @@
 
     &__output {
         grid-area: output;
-        font-size: x-large;
+        font-size: xx-large;
         text-align:end;
         justify-content: flex-end;
         color: $color-white;
@@ -33,7 +33,7 @@
         flex-direction: column;
         word-wrap: break-word;
         word-break: break-all;
-        padding: 5px;
+        padding-right: 10px;
     }
     &__light-buttons {
         border: solid black 1px;

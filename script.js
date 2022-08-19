@@ -17,15 +17,15 @@ let divideButton = document.getElementById('divide');
 let negativeButton = document.getElementById('neg');
 let percentButton = document.getElementById('percent');
 let decimalButton = document.getElementById('dec');
-let number = 0
+let number = ""
 let symbol = ""
+let decimalPresent = false 
 
 
 //gives every num a click event
 buttons.forEach((button) =>  {
     button.addEventListener('click', (e) => {
             display.innerText += e.target.innerText;
-            console.log(number);
         })});
 
 
@@ -81,7 +81,7 @@ const clear = (e) => {
     symbol = e.target.innerText
 
     if (symbol === "C") {
-        number = 0
+        number = ""
         display.innerText = ""
     }
 }
@@ -107,6 +107,31 @@ negativeButton.addEventListener('click', negative);
 
 
 
+
+
+//NEED TO FIGURE OUT
+const decimal = (e) => {
+
+    if (totalDisplay.innerText !== "") {
+        buttons = e.target.innerText
+        display.innerText = "";
+    }
+    number = Number(display.innerText);
+    buttons = e.target.innerText
+
+    if (buttons === ".") {
+        decimalPresent = true
+        if (decimalPresent === true && decimalButton.addEventListener('click', (e))) {
+            document.getElementById("dec").setAttribute('disabled','disabled');
+        }
+    }
+}   
+decimalButton.addEventListener('click', decimal);
+
+
+
+
+
 //equals button will perform all of the tasks that the symbols require using if statements.
 const equals = (e) => {
     if (symbol === "+") {
@@ -125,4 +150,3 @@ const equals = (e) => {
     }
 }
 equalsButton.addEventListener('click', equals);
-

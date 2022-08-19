@@ -16,13 +16,13 @@ var divideButton = document.getElementById('divide');
 var negativeButton = document.getElementById('neg');
 var percentButton = document.getElementById('percent');
 var decimalButton = document.getElementById('dec');
-var number = 0;
-var symbol = ""; //gives every num a click event
+var number = "";
+var symbol = "";
+var decimalPresent = false; //gives every num a click event
 
 buttons.forEach(function (button) {
   button.addEventListener('click', function (e) {
     display.innerText += e.target.innerText;
-    console.log(number);
   });
 }); //function and click events to return the add/take/divide/times of a sum
 
@@ -70,7 +70,7 @@ var clear = function clear(e) {
   symbol = e.target.innerText;
 
   if (symbol === "C") {
-    number = 0;
+    number = "";
     display.innerText = "";
   }
 };
@@ -92,7 +92,27 @@ var negative = function negative(e) {
   }
 };
 
-negativeButton.addEventListener('click', negative); //equals button will perform all of the tasks that the symbols require using if statements.
+negativeButton.addEventListener('click', negative); //NEED TO FIGURE OUT
+
+var decimal = function decimal(e) {
+  if (totalDisplay.innerText !== "") {
+    buttons = e.target.innerText;
+    display.innerText = "";
+  }
+
+  number = Number(display.innerText);
+  buttons = e.target.innerText;
+
+  if (buttons === ".") {
+    decimalPresent = true;
+
+    if (decimalPresent === true && decimalButton.addEventListener('click', e)) {
+      document.getElementById("dec").setAttribute('disabled', 'disabled');
+    }
+  }
+};
+
+decimalButton.addEventListener('click', decimal); //equals button will perform all of the tasks that the symbols require using if statements.
 
 var equals = function equals(e) {
   if (symbol === "+") {
