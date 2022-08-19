@@ -15,10 +15,8 @@ var timesButton = document.getElementById('time');
 var divideButton = document.getElementById('divide');
 var negativeButton = document.getElementById('neg');
 var percentButton = document.getElementById('percent');
-var decimalButton = document.getElementById('dec');
 var number = "";
-var symbol = "";
-var decimalPresent = false; //gives every num a click event
+var symbol = ""; //gives every num a click event
 
 buttons.forEach(function (button) {
   button.addEventListener('click', function (e) {
@@ -92,27 +90,7 @@ var negative = function negative(e) {
   }
 };
 
-negativeButton.addEventListener('click', negative); //NEED TO FIGURE OUT
-
-var decimal = function decimal(e) {
-  if (totalDisplay.innerText !== "") {
-    buttons = e.target.innerText;
-    display.innerText = "";
-  }
-
-  number = Number(display.innerText);
-  buttons = e.target.innerText;
-
-  if (buttons === ".") {
-    decimalPresent = true;
-
-    if (decimalPresent === true && decimalButton.addEventListener('click', e)) {
-      document.getElementById("dec").setAttribute('disabled', 'disabled');
-    }
-  }
-};
-
-decimalButton.addEventListener('click', decimal); //equals button will perform all of the tasks that the symbols require using if statements.
+negativeButton.addEventListener('click', negative); //equals button will perform all of the tasks that the symbols require using if statements.
 
 var equals = function equals(e) {
   if (symbol === "+") {
@@ -124,7 +102,6 @@ var equals = function equals(e) {
   } else if (symbol === "*") {
     number *= Number(display.innerText);
     display.innerText = number;
-    console.log(display.innerText);
   } else if (symbol === "/") {
     number /= Number(display.innerText);
     display.innerText = number;
