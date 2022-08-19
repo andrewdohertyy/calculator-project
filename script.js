@@ -16,11 +16,9 @@ let timesButton = document.getElementById('time');
 let divideButton = document.getElementById('divide');
 let negativeButton = document.getElementById('neg');
 let percentButton = document.getElementById('percent');
+let decimalButton = document.getElementById('dec');
 let number = 0
 let symbol = ""
-
-
-//DOM handling for click events, whenevr a button is clicked
 
 
 //gives every num a click event
@@ -32,8 +30,8 @@ buttons.forEach((button) =>  {
 
 
 
-//function and click event to return the addition of a sum
-const plus = (e) => {
+//function and click events to return the add/take/divide/times of a sum
+const sum = (e) => {
     if (totalDisplay.innerText !== "") {
         symbol = e.target.innerText
         display.innerText = "";
@@ -43,48 +41,14 @@ const plus = (e) => {
     symbol = e.target.innerText
     display.innerText = "";
 }
-plusButton.addEventListener('click', plus);
+plusButton.addEventListener('click', sum);
 
+minusButton.addEventListener('click', sum);
 
-//function and click event to return the subtraction of a sum
-const minus = (e) => {
-    if (totalDisplay.innerText !== "") {
-        symbol = e.target.innerText
-        display.innerText = "";
-    }
-    //after the zero value in the string takes an input (number)
-    number = Number(display.innerText);
-    symbol = e.target.innerText
-    display.innerText = "";
-}
-minusButton.addEventListener('click', minus);
+timesButton.addEventListener('click', sum);
 
-//function and click event to return the multiplication of a sum
-const times = (e) => {
-    if (totalDisplay.innerText !== "") {
-        symbol = e.target.innerText
-        display.innerText = "";
-    }
-    //after the zero value in the string takes an input (number)
-    number = Number(display.innerText);
-    symbol = e.target.innerText
-    display.innerText = "";
-}
-timesButton.addEventListener('click', times);
+divideButton.addEventListener('click', sum);
 
-
-//function and click event to return the division of a sum
-const divide = (e) => {
-    if (totalDisplay.innerText !== "") {
-        symbol = e.target.innerText
-        display.innerText = "";
-    }
-    //after the zero value in the string takes an input (number)
-    number = Number(display.innerText);
-    symbol = e.target.innerText
-    display.innerText = "";
-}
-divideButton.addEventListener('click', divide);
 
 
 //function and click event to show the current value as a percentage
@@ -105,6 +69,7 @@ const percent = (e) => {
 percentButton.addEventListener('click', percent);
 
 
+
 //function and click event to clear the output and reset number value to 0
 const clear = (e) => {
     if (totalDisplay.innerText !== "") {
@@ -121,6 +86,7 @@ const clear = (e) => {
     }
 }
 clearButton.addEventListener('click', clear);
+
 
 
 //function and click event to make numbers negative
@@ -140,6 +106,7 @@ const negative = (e) => {
 negativeButton.addEventListener('click', negative);
 
 
+
 //equals button will perform all of the tasks that the symbols require using if statements.
 const equals = (e) => {
     if (symbol === "+") {
@@ -155,8 +122,6 @@ const equals = (e) => {
     } else if (symbol === "/") {
         number /= Number(display.innerText)
         display.innerText = number;
-    } else if (symbol === "." && display.innerText === ".") {
-        return display.innerText;
     }
 }
 equalsButton.addEventListener('click', equals);
