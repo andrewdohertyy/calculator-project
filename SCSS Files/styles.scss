@@ -1,0 +1,22 @@
+//storing all styles for use in other files.
+
+$color-white: white;
+$color-black: black;
+$color-orange: orange;
+$color-grey: grey;
+$color-light-grey: lightgrey;
+
+
+
+.calculator__light-buttons:hover {
+    opacity: 0.6;
+}
+.calculator__orange-buttons:hover {
+    opacity: 0.6;
+}
+.calculator__grey-buttons:hover {
+    opacity: 0.6;
+}
+.calculator__zero-button:hover {
+    opacity: 0.6;
+}
