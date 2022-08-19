@@ -24,9 +24,9 @@ buttons.forEach(function (button) {
     display.innerText += e.target.innerText;
     console.log(number);
   });
-}); //when plus is clicked clears text and sets num to display number
+}); //function and click event to return the addition of a sum
 
-plusButton.addEventListener('click', function (e) {
+var plus = function plus(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
@@ -36,8 +36,11 @@ plusButton.addEventListener('click', function (e) {
   number = Number(display.innerText);
   symbol = e.target.innerText;
   display.innerText = "";
-});
-minusButton.addEventListener('click', function (e) {
+};
+
+plusButton.addEventListener('click', plus); //function and click event to return the subtraction of a sum
+
+var minus = function minus(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
@@ -47,8 +50,11 @@ minusButton.addEventListener('click', function (e) {
   number = Number(display.innerText);
   symbol = e.target.innerText;
   display.innerText = "";
-});
-timesButton.addEventListener('click', function (e) {
+};
+
+minusButton.addEventListener('click', minus); //function and click event to return the multiplication of a sum
+
+var times = function times(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
@@ -58,8 +64,11 @@ timesButton.addEventListener('click', function (e) {
   number = Number(display.innerText);
   symbol = e.target.innerText;
   display.innerText = "";
-});
-divideButton.addEventListener('click', function (e) {
+};
+
+timesButton.addEventListener('click', times); //function and click event to return the division of a sum
+
+var divide = function divide(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
@@ -69,8 +78,11 @@ divideButton.addEventListener('click', function (e) {
   number = Number(display.innerText);
   symbol = e.target.innerText;
   display.innerText = "";
-});
-percentButton.addEventListener('click', function (e) {
+};
+
+divideButton.addEventListener('click', divide); //function and click event to show the current value as a percentage
+
+var percent = function percent(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
@@ -83,8 +95,11 @@ percentButton.addEventListener('click', function (e) {
     number = Number(display.innerText) / 100;
     display.innerText = number;
   }
-});
-clearButton.addEventListener('click', function (e) {
+};
+
+percentButton.addEventListener('click', percent); //function and click event to clear the output and reset number value to 0
+
+var clear = function clear(e) {
   if (totalDisplay.innerText !== "") {
     symbol = e.target.innerText;
     display.innerText = "";
@@ -97,7 +112,9 @@ clearButton.addEventListener('click', function (e) {
     number = 0;
     display.innerText = "";
   }
-});
+};
+
+clearButton.addEventListener('click', clear); //function and click event to make numbers negative
 
 var negative = function negative(e) {
   if (totalDisplay.innerText !== "") {
@@ -112,12 +129,11 @@ var negative = function negative(e) {
     var negativeNum = -Math.abs(display.innerText);
     display.innerText = negativeNum;
   }
-}; //function and click event to make numbers negative
-
+};
 
 negativeButton.addEventListener('click', negative); //equals button will perform all of the tasks that the symbols require using if statements.
 
-equalsButton.addEventListener('click', function (e) {
+var equals = function equals(e) {
   if (symbol === "+") {
     number += Number(display.innerText);
     display.innerText = number;
@@ -131,5 +147,9 @@ equalsButton.addEventListener('click', function (e) {
   } else if (symbol === "/") {
     number /= Number(display.innerText);
     display.innerText = number;
+  } else if (symbol === "." && display.innerText === ".") {
+    return display.innerText;
   }
-});
+};
+
+equalsButton.addEventListener('click', equals);
