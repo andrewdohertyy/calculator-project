@@ -16,7 +16,7 @@ var divideButton = document.getElementById('divide');
 var negativeButton = document.getElementById('neg');
 var percentButton = document.getElementById('percent');
 var number = "";
-var symbol = ""; //gives every num a click event
+var symbol = ""; //gives every num a click event to add the number to the display
 
 buttons.forEach(function (button) {
   button.addEventListener('click', function (e) {

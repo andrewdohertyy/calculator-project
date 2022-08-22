@@ -8,6 +8,7 @@
 
 .calculator {
   display: grid;
+  background-color: black;
   color: black;
   max-width: 100vh;
   gap: 2px;
