@@ -1,9 +1,6 @@
 //element for displaying the output of my functions
 let display = document.getElementById('display');
 
-//element for temporarily display output of functions
-let totalDisplay = document.getElementById('total-display');
-
 //pulls all buttons and stores them in an array
 let buttons = Array.from(document.getElementsByClassName('button'));
 

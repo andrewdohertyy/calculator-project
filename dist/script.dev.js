@@ -1,9 +1,7 @@
 "use strict";
 
 //element for displaying the output of my functions
-var display = document.getElementById('display'); //element for temporarily display output of functions
-
-var totalDisplay = document.getElementById('total-display'); //pulls all buttons and stores them in an array
+var display = document.getElementById('display'); //pulls all buttons and stores them in an array
 
 var buttons = Array.from(document.getElementsByClassName('button')); //variables for function buttons
 
