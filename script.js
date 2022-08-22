@@ -29,33 +29,24 @@ buttons.forEach((button) =>  {
     })});
 
 //function and click events to return the add/take/divide/times of a sum
-const sum = (e) => {
-    if (totalDisplay.innerText !== "") {
-        symbol = e.target.innerText
-        display.innerText = "";
-    }
+const createSum = (e) => {
     //after the zero value  from the symbolin the string takes an input (number)
     number = Number(display.innerText);
     symbol = e.target.innerText
     display.innerText = "";
 }
-plusButton.addEventListener('click', sum);
+plusButton.addEventListener('click', createSum);
 
-minusButton.addEventListener('click', sum);
+minusButton.addEventListener('click', createSum);
 
-timesButton.addEventListener('click', sum);
+timesButton.addEventListener('click', createSum);
 
-divideButton.addEventListener('click', sum);
+divideButton.addEventListener('click', createSum);
 
 
 
 //function and click event to show the current value as a percentage
 const percent = (e) => {
-    if (totalDisplay.innerText !== "") {
-        symbol = e.target.innerText
-        display.innerText = "";
-    }
-    
     number = Number(display.innerText);
     symbol = e.target.innerText
 
@@ -70,11 +61,6 @@ percentButton.addEventListener('click', percent);
 
 //function and click event to clear the output and reset number value to 0
 const clear = (e) => {
-    if (totalDisplay.innerText !== "") {
-        symbol = e.target.innerText
-        display.innerText = "";
-    }
-
     number = Number(display.innerText);
     symbol = e.target.innerText
 
@@ -85,12 +71,10 @@ const clear = (e) => {
 }
 clearButton.addEventListener('click', clear);
 
+
+
 //function and click event to make numbers negative
 const negative = (e) => {
-    if (totalDisplay.innerText !== "") {
-        symbol = e.target.innerText
-        display.innerText = "";
-    }
     number = Number(display.innerText);
     symbol = e.target.innerText
     
@@ -100,6 +84,7 @@ const negative = (e) => {
     }
 }
 negativeButton.addEventListener('click', negative);
+
 
 
 //equals button will perform all of the tasks that the symbols require using if statements.
