@@ -12,7 +12,7 @@ describe('testing number buttons', function () {
     cy.get('#display').should("contain", "123");
   });
 });
-describe('testing addition functionality', function () {
+describe('testing logic functionality', function () {
   it('if a number is clicked followed by the + then another number it should output the total', function () {
     cy.get('#one').click();
     cy.get('#plus').click();
@@ -20,8 +20,6 @@ describe('testing addition functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "4");
   });
-});
-describe('testing minus functionality', function () {
   it('if a number is clicked followed by the - then another number it should output the total ', function () {
     cy.get('#eight').click();
     cy.get('#minus').click();
@@ -29,8 +27,6 @@ describe('testing minus functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "5");
   });
-});
-describe('testing times functionality', function () {
   it('if a number is clicked followed by the * then another number it should give the multiplication', function () {
     cy.get('#eight').click();
     cy.get('#time').click();
@@ -38,8 +34,6 @@ describe('testing times functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "24");
   });
-});
-describe('testing divide functionality', function () {
   it('if a number is clicked followed by the * then another number it should give the division', function () {
     cy.get('#eight').click();
     cy.get('#divide').click();
@@ -47,23 +41,17 @@ describe('testing divide functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "4");
   });
-});
-describe('testing decimal button functionality', function () {
   it('if a number is clicked followed by the . then another number it should give the value as a decimal number', function () {
     cy.get('#five').click();
     cy.get('#dec').click();
     cy.get('#seven').click();
     cy.get('#display').should("contain", "5.7");
   });
-});
-describe('testing percent button functionality', function () {
   it('if a number is clicked followed by the % it should give the value of the number/100', function () {
     cy.get('#nine').click();
     cy.get('#percent').click();
     cy.get('#display').should("contain", "0.09");
   });
-});
-describe('testing make negative button functionality', function () {
   it('if a number is clicked followed by the % it should give the value of the number/100', function () {
     cy.get('#three').click();
     cy.get('#neg').click();
@@ -78,7 +66,7 @@ describe('testing clear button functionality', function () {
   });
 }); //alll function buttons tested, will now test chained functions 
 
-describe('testing multiple addition functionality', function () {
+describe('testing chained functionality', function () {
   it('if a number is clicked followed by the + button then equals you should be able to carry the process on after', function () {
     cy.get('#three').click();
     cy.get('#plus').click();
@@ -92,8 +80,6 @@ describe('testing multiple addition functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "17");
   });
-});
-describe('testing multiple minus functionality', function () {
   it('if a number is clicked followed by the - button then equals you should be able to carry the process on after', function () {
     cy.get('#four').click();
     cy.get('#minus').click();
@@ -107,8 +93,6 @@ describe('testing multiple minus functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "-18");
   });
-});
-describe('testing multiple times functionality', function () {
   it('if a number is clicked followed by the * button then equals you should be able to carry the process on after', function () {
     cy.get('#three').click();
     cy.get('#time').click();
@@ -122,8 +106,6 @@ describe('testing multiple times functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "1134");
   });
-});
-describe('testing multiple divide functionality', function () {
   it('if a number is clicked followed by the / button then equals you should be able to carry the process on after', function () {
     cy.get('#three').click();
     cy.get('#divide').click();
@@ -137,8 +119,6 @@ describe('testing multiple divide functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "0.125");
   });
-});
-describe('testing multiple equals functionality', function () {
   it('if a number is clicked followed by a sum and another number equals should keep adding the value', function () {
     cy.get('#three').click();
     cy.get('#plus').click();
@@ -148,8 +128,6 @@ describe('testing multiple equals functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "24");
   });
-});
-describe('testing multiply and addition functionality', function () {
   it('to create a sum using a mix of + & * in a chain', function () {
     cy.get('#three').click();
     cy.get('#plus').click();
@@ -163,8 +141,6 @@ describe('testing multiply and addition functionality', function () {
     cy.get('#equals').click();
     cy.get('#display').should("contain", "34");
   });
-});
-describe('testing division and subraction functionality', function () {
   it('to create a sum using a mix of - & / in a chain', function () {
     cy.get('#four').click();
     cy.get('#minus').click();
@@ -177,6 +153,28 @@ describe('testing division and subraction functionality', function () {
     cy.get('#two').click();
     cy.get('#equals').click();
     cy.get('#display').should("contain", "-1.5");
+  });
+});
+describe('testing multiplication with decimal numbers functionality', function () {
+  it('to create a sum using * and decimal numbers', function () {
+    cy.get('#four').click();
+    cy.get('#dec').click();
+    cy.get('#three').click();
+    cy.get('#time').click();
+    cy.get('#two').click();
+    cy.get('#equals').click();
+    cy.get('#display').should("contain", "8.6");
+  });
+});
+describe('testing division with decimal numbers functionality', function () {
+  it('to create a sum using / and decimal numbers', function () {
+    cy.get('#nine').click();
+    cy.get('#dec').click();
+    cy.get('#nine').click();
+    cy.get('#divide').click();
+    cy.get('#three').click();
+    cy.get('#equals').click();
+    cy.get('#display').should("contain", "3.3");
   });
 });
 describe('testing using the should.not.contain function', function () {

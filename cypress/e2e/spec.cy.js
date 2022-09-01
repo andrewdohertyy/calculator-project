@@ -15,8 +15,7 @@ describe('testing number buttons', () => {
 })
 
 
-
-describe('testing addition functionality', () => {
+describe('testing logic functionality', () => {
   it('if a number is clicked followed by the + then another number it should output the total', () => {
     cy.get('#one').click()
     cy.get('#plus').click()
@@ -24,9 +23,7 @@ describe('testing addition functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "4")
   })
-})
 
-describe('testing minus functionality', () => {
   it('if a number is clicked followed by the - then another number it should output the total ', () => {
     cy.get('#eight').click()
     cy.get('#minus').click()
@@ -34,9 +31,7 @@ describe('testing minus functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "5")
   })
-})
 
-describe('testing times functionality', () => {
   it('if a number is clicked followed by the * then another number it should give the multiplication', () => {
     cy.get('#eight').click()
     cy.get('#time').click()
@@ -44,9 +39,7 @@ describe('testing times functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "24")
   })
-})
 
-describe('testing divide functionality', () => {
   it('if a number is clicked followed by the * then another number it should give the division', () => {
     cy.get('#eight').click()
     cy.get('#divide').click()
@@ -54,32 +47,28 @@ describe('testing divide functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "4")
   })
-})
 
-describe('testing decimal button functionality', () => {
   it('if a number is clicked followed by the . then another number it should give the value as a decimal number', () => {
     cy.get('#five').click()
     cy.get('#dec').click()
     cy.get('#seven').click()
     cy.get('#display').should("contain", "5.7")
   })
-})
 
-describe('testing percent button functionality', () => {
   it('if a number is clicked followed by the % it should give the value of the number/100', () => {
     cy.get('#nine').click()
     cy.get('#percent').click()
     cy.get('#display').should("contain", "0.09")
   })
-})
 
-describe('testing make negative button functionality', () => {
   it('if a number is clicked followed by the % it should give the value of the number/100', () => {
     cy.get('#three').click()
     cy.get('#neg').click()
     cy.get('#display').should("contain", "-3")
   })
+
 })
+
 
 describe('testing clear button functionality', () => {
   it('if a number is clicked followed by the clear button it should change the display to blank', () => {
@@ -89,9 +78,10 @@ describe('testing clear button functionality', () => {
   })
 })
 
+
 //alll function buttons tested, will now test chained functions 
 
-describe('testing multiple addition functionality', () => {
+describe('testing chained functionality', () => {
   it('if a number is clicked followed by the + button then equals you should be able to carry the process on after', () => {
     cy.get('#three').click()
     cy.get('#plus').click()
@@ -105,10 +95,7 @@ describe('testing multiple addition functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "17")
   })
-})
 
-
-describe('testing multiple minus functionality', () => {
   it('if a number is clicked followed by the - button then equals you should be able to carry the process on after', () => {
     cy.get('#four').click()
     cy.get('#minus').click()
@@ -122,9 +109,7 @@ describe('testing multiple minus functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "-18")
   })
-})
 
-describe('testing multiple times functionality', () => {
   it('if a number is clicked followed by the * button then equals you should be able to carry the process on after', () => {
     cy.get('#three').click()
     cy.get('#time').click()
@@ -138,9 +123,7 @@ describe('testing multiple times functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "1134")
   })
-})
 
-describe('testing multiple divide functionality', () => {
   it('if a number is clicked followed by the / button then equals you should be able to carry the process on after', () => {
     cy.get('#three').click()
     cy.get('#divide').click()
@@ -154,9 +137,8 @@ describe('testing multiple divide functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "0.125")
   })
-})
 
-describe('testing multiple equals functionality', () => {
+
   it('if a number is clicked followed by a sum and another number equals should keep adding the value', () => {
     cy.get('#three').click()
     cy.get('#plus').click()
@@ -166,10 +148,7 @@ describe('testing multiple equals functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "24")
   })
-})
 
-
-describe('testing multiply and addition functionality', () => {
   it('to create a sum using a mix of + & * in a chain', () => {
     cy.get('#three').click()
     cy.get('#plus').click()
@@ -183,9 +162,7 @@ describe('testing multiply and addition functionality', () => {
     cy.get('#equals').click()
     cy.get('#display').should("contain", "34")
   })
-})
 
-describe('testing division and subraction functionality', () => {
   it('to create a sum using a mix of - & / in a chain', () => {
     cy.get('#four').click()
     cy.get('#minus').click()
@@ -198,6 +175,29 @@ describe('testing division and subraction functionality', () => {
     cy.get('#two').click()
     cy.get('#equals').click()
     cy.get('#display').should("contain", "-1.5")
+  })
+})
+describe('testing multiplication with decimal numbers functionality', () => {
+  it('to create a sum using * and decimal numbers', () => {
+    cy.get('#four').click()
+    cy.get('#dec').click()
+    cy.get('#three').click()
+    cy.get('#time').click()
+    cy.get('#two').click()
+    cy.get('#equals').click()
+    cy.get('#display').should("contain", "8.6")
+  })
+})
+
+describe('testing division with decimal numbers functionality', () => {
+  it('to create a sum using / and decimal numbers', () => {
+    cy.get('#nine').click()
+    cy.get('#dec').click()
+    cy.get('#nine').click()
+    cy.get('#divide').click()
+    cy.get('#three').click()
+    cy.get('#equals').click()
+    cy.get('#display').should("contain", "3.3")
   })
 })
 
